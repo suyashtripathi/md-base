@@ -86,12 +86,7 @@ export default {
           // which we are planning to acheive in the code below
 
           for (var arr in subCtgArr) {
-            console.log('Searching for subCategory: ' + subCtgArr[arr].name)
-            // var filteredArr = mealArr.filter(m => m.subCategories.indexOf(subCtgArr[arr].name) !== -1)
             var filteredArr = mealArr.filter(m => m.subCategories.indexOf((subCtgArr[arr].name)) !== -1)
-            for (var s = 0; s < filteredArr.length; s++) {
-              console.log('Searched for ' + (subCtgArr[arr].name) + ' and matched with ' + filteredArr[s].subCategories)
-            }
             planArr = planArr.concat(filteredArr)
           }
           planArr = this.removeDuplicates(planArr)

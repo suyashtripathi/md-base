@@ -103,15 +103,12 @@ export default {
   },
   computed: {
     ...mapState('meals', ['meals', 'mealPreferences', 'breakfastSubCtgLst', 'lunchSubCtgLst', 'dinnerSubCtgLst', 'breakfastCtgLst', 'lunchCtgLst', 'dinnerCtgLst'])
-    // breakfastCategories: 'meals/fetchBrCtgLst', // Breakfast Categories
-    // subCategories: 'meals/fetchBrSubCtgLst' // Breakfast Sub Categories
   },
   methods: {
     btnToggled () {
       this.selectedTab = this.btnToggled
     },
     showModal (modalRefId) {
-      // console.log('Card clicked')
       this.openModalRefId = modalRefId
       this.opened = true
     },
@@ -194,17 +191,6 @@ export default {
       // Fetch Breakfast Sub Categories
       var subCtgLst = []
       for (var i = 0; i < mealCtgLst.length; i++) {
-        // var subCtgLen = mealCtgLst[i].subCategories.length
-        // for (var k = 0; k < subCtgLen; k++) {
-        //   var subCtg = mealCtgLst[i].subCategories[k]
-        //   if (subCtgLst.length > 0) {
-        //     if (subCtgLst.indexOf(subCtg) === -1) {
-        //       subCtgLst.push(subCtg)
-        //     }
-        //   } else {
-        //     subCtgLst.push(subCtg)
-        //   }
-        // }
         subCtgLst = subCtgLst.concat(mealCtgLst[i].subCategories)
       }
       subCtgLst = this.removeDuplicates(subCtgLst)
